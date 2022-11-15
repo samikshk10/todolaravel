@@ -50,14 +50,15 @@
 <button type="submit" class="btn btn-primary mt-2">Save</button>
     </form>
 
-
-
 <table class="table mt-4"> 
     <tr>
         <th>Id</th>
         <th>Title</th>
-        <th>Action</th>
+        <th>Edit</th>
+        <th >Delete</th>
     </tr>
+
+    
 
     
     @foreach($list as $value)
@@ -68,7 +69,10 @@
             {{$value->id}}
         </td>
 
+
+
         <td>{{ $value->title }}</td>
+        <td><a href="/edit/{{ $value->id }}"><button id="editbtn" class="btn btn-success"><i class="fa fa-edit fa-lg icon"></i></button></a></td>
         <td><a href="/delete/{{ $value->id }}"><button id="deletebtn" class="btn btn-danger"><i class="fa fa-trash fa-lg icon"></i></button></a></td>
         
         
@@ -76,9 +80,9 @@
     </tr>
     @endforeach
 </table>
-<h6 class="text-center">You have {{ count($list)  }} Todo Tasks !!!</h6>
+<h6 >You have {{ count($list)  }} Todo Tasks !!!</h6>
 
-    
+ 
 
 
     </div>

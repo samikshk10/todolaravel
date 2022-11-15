@@ -23,7 +23,8 @@ Route::post('/save-todo',[todolistController::class,'saveTodo'])->name('saveTodo
 
 
 Route::get('delete/{id}',[todolistController::class,'delete']);
-Route::get('edit/{id}',[todolistController::class,'delete']);
+Route::get('edit/{id}',[todolistController::class,'edit']);
+Route::post('/edit',[todolistController::class,'update'])->name('edittodo');
 
 
 

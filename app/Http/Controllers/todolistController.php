@@ -28,8 +28,24 @@ class todolistController extends Controller
     $row=$todotable::destroy($id);
    
          return back();
-        // return $id;
-        
-       
+        // return $id;    
   }
+
+  public function edit($id)
+  {
+    $data=todotable::find($id);
+    return view('edit',['data'=>$data]);
+  }
+
+
+public function update(Request $request)
+{
+  $todoobj= todotable::find($request->id);
+  $todoobj->title=$request->todos;
+  $todoobj->update();
+  //  print_r($request->all);
+  return redirect('/');
+
+}
+
 }
